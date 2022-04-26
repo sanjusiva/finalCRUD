@@ -20,13 +20,10 @@ export class AddUserComponent implements OnInit {
   ) { 
     this.userform = this.fb.group({
       name: ['', [Validators.required]],
-      mobile: ['', [ Validators.maxLength(10)]],
+      mobile: [''],
       email: ['', [Validators.required, Validators.email]],
       gender: ['', [Validators.required]],
-      // dob: [null, [Validators.required]],
       id: [0, [Validators.required]],
-      // isActive: [true],
-      // range: [[0, 10]],
       userType: ['', [Validators.required]],
     });
 
@@ -35,7 +32,7 @@ export class AddUserComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.id = params['id'];
-      if (params['id'] != null) {
+      if (this.id != null) {
         this.userform.get('Id')?.setValue(params['id']);
         const data = this.userService.getUsersByID(this.id);
         if (data) {
@@ -45,21 +42,18 @@ export class AddUserComponent implements OnInit {
     });
   }
   save() {
-    if (this.userform.invalid) // true if any form validation fail
-      return
-
+   
     if (this.userform.get('id')?.value === 0) {
-      // on Create New User
+      //Create New User
       this.userService.addUser(this.userform.value);
     } else {
-      // on Update User info
+      //Update User info
       this.userService.updateUser(this.userform.value);
     }
 
-    //Redirecting to user List page after save or update
+    //Redirecting to table
     this.router.navigate(['/user']);
   }
 
 }
-
 

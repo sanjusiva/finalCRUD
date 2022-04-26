@@ -4,8 +4,5 @@ export interface User {
     email: string,
     mobile: string,
     gender: string,
-    // dob: Date,
-    // isActive: boolean,
-    // range?: any
     userType?: string
 }

@@ -8,29 +8,13 @@ import { User } from '../user';
 })
 export class UserListComponent implements OnInit {
   userList: User[] = [];
-  // first = 0;
-  // rows = 10;
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.userList = this.userService.getUsers();
   }
-  // next() {
-  //   this.first = this.first + this.rows;
-  // }
-  // prev() {
-  //   this.first = this.first - this.rows;
-  // }
-  // reset() {
-  //   this.first = 0;
-  // }
-  // isLastPage(): boolean {
-  //   return this.userList ? this.first === (this.userList.length - this.rows) : true;
-  // }
-  // isFirstPage(): boolean {
-  //   return this.userList ? this.first === 0 : true;
-  // }
   remove(id: number) {
+    console.warn("remove id :"+id);
     this.userService.removeUser(id);
     this.userList = this.userService.getUsers();
 }
