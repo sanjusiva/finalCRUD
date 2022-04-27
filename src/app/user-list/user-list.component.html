@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 20px;">
-    <p-table [value]="userList"> 
+    <p-table [value]="userList">
         <ng-template pTemplate="header">
             <tr>
                 <th>Name</th>
@@ -10,6 +10,7 @@
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-user>
+            <!-- <p *ngFor="let user of userList"> -->
             <tr>
                 <td>{{user.name}}</td>
                 <td>{{user.email}}</td>
@@ -19,7 +20,8 @@
                     <button [routerLink]="['/update-user',user.id]">Edit</button>
                     <button (click)="remove(user.id)">Remove</button>
                 </td>
-            </tr>        
+            </tr>      
+        <!-- </p>   -->
         </ng-template>
     </p-table>
     <a [routerLink]="['/add-user']" class="btn btn-primary">Add New</a>

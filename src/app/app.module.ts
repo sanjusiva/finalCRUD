@@ -17,7 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './service/user.service';
 
-
+import {ConfirmationPopoverModule} from 'angular-confirmation-popover'
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +41,9 @@ import { UserService } from './service/user.service';
 
     //  Angular Form Modules
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    ConfirmationPopoverModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

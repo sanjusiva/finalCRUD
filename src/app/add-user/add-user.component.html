@@ -3,19 +3,23 @@
         <div>
             <label for="name">Name</label>
             <div>
-                <input type="text" #name id="name" name="name" formControlName="name" placeholder="Name">           
+                <input type="text" #name id="name" name="name" formControlName="name" placeholder="Name">  
+                <!-- <span style="color: red;" *ngIf="name && name.invalid && name.touched">This fiels is invalid</span> -->
             </div>
         </div>
         <div>
             <label for="mobile" class="form-label">Mobile</label>
             <div>
                 <input type="tel" id="mobile" name="mobile" formControlName="mobile" placeholder="Mobile">
+                <!-- <span style="color: red;" *ngIf="mobile && mobile.invalid && mobile.touched">This fiels is invalid</span>  -->
+
             </div>
         </div>
         <div>
             <label for="email">Email</label>
             <div>
                 <input type="email" id="email" name="email" formControlName="email" placeholder="xyz@gmail.com">
+                <!-- <span style="color: red;" *ngIf="email && email.invalid && email.touched">This fiels is invalid</span><br> -->
             </div>
         </div>
         <div>
@@ -45,12 +49,13 @@
             <div class="btn-group" role="group">
                 <button (click)="save()" [disabled]="userform.invalid" class="btn btn-primary" type="button">
                     {{id==0 || id==null ?'Save':'Update'}}</button>
-                <button class="btn btn-secondary" type="button">Reset </button>
+                <button class="btn btn-secondary" (click)="resetValues()" type="button">Reset </button>
+                <button class="btn btn-info" [routerLink]="['/user']">Back</button>
             </div>
         </div>
 
-        <div >
+        <!-- <div >
             {{userform.value |json}}
-        </div>  
+        </div>   -->
     </form>
 </div>

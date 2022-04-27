@@ -13,6 +13,7 @@ export class UserService {
         mobile: '6383638047',
         userType: 'Admin'
     }];
+    newId:number=1;
     constructor() {}
     getUsers() {
         return this.userList
@@ -21,8 +22,10 @@ export class UserService {
         return this.userList.find(x => x.id == id)
     }
     addUser(user: User) {
-        user.id = new Date().getTime();
+        // user.id = new Date().getTime();
+        user.id = this.newId+1
         this.userList.push(user);
+        alert("Added successfully");
     }
     updateUser(user: User) {
         console.warn("userID : "+user.id);
@@ -30,6 +33,7 @@ export class UserService {
         console.warn("userIndex : "+userIndex);
         console.warn("USER DETAILS : "+user);
         this.userList[userIndex] = user;
+        alert("Updated successfully");
     }
     removeUser(id: number) {
         this.userList = this.userList.filter(x => x.id != id);

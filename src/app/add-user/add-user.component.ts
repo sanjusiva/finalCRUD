@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder,FormGroup,Validators} from '@angular/forms';
+import {FormBuilder,FormGroup,NgForm,Validators,FormControl} from '@angular/forms';
 import {ActivatedRoute,Router} from '@angular/router';
 import {UserService} from '../service/user.service'; 
 @Component({
@@ -53,6 +53,9 @@ export class AddUserComponent implements OnInit {
 
     //Redirecting to table
     this.router.navigate(['/user']);
+  }
+  resetValues(){
+    this.userform.reset();
   }
 
 }
