@@ -1,0 +1,17 @@
+<div class="container" style="margin-top: 20px;">
+    <table class="table">
+        <tr>
+            <th>Domain Name</th>
+            <th>Topic</th>
+            <th>Material</th>  
+        </tr>
+
+        <tr *ngFor="let user of userList">
+            <td>{{user.domain_name}}</td>
+            <td>{{user.topic}}</td>
+            <td>{{user.material}}</td>
+        </tr>
+    </table>
+    <a [routerLink]="['/user-list']" class="btn btn-primary">Back</a>
+
+</div>

@@ -7,11 +7,9 @@ import { User } from '../user';
 export class UserService {
     private userList: User[] = [{
         id: 1,
-        name: 'Sanjitha Sivakumar',
-        email: 'sanju@gmail.com',
-        gender: 'female',
-        mobile: '6383638047',
-        userType: 'Admin'
+        domain_name:'Angular',
+        topic:'Introduction',
+        material:"https://angular.io/docs"
     }];
     constructor() {}
     getUsers() {

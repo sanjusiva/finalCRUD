@@ -3,10 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { AddUserComponent } from './add-user/add-user.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
@@ -16,14 +14,20 @@ import { SliderModule } from 'primeng/slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './service/user.service';
+import { UserMaterialComponent } from './user-material/user-material.component';
+import { CourseComponent } from './course/course.component';
+import { LoginComponent } from './login/login.component';
+import { AdminMaterialComponent } from './admin-material/admin-material.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     UserListComponent,
     AddUserComponent,
-    NavBarComponent
+    UserMaterialComponent,
+    CourseComponent,
+    LoginComponent,
+    AdminMaterialComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,7 @@ import { UserService } from './service/user.service';
 
     
   ],
-  providers: [UserService],
+  providers: [UserService,LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

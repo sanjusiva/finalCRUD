@@ -20,12 +20,10 @@ export class AddUserComponent implements OnInit {
     private userService: UserService
   ) { 
     this.userform = this.fb.group({
-      name: ['', [Validators.required]],
-      mobile: ['',[Validators.required,Validators.maxLength(10)]],
-      email: ['', [Validators.required, Validators.pattern(/([a-zA-Z0-9-_\.]+)@([a-zA-Z0-9]+)\.([a-zA-Z]{2,5})(\.[a-zA-Z]{2,5})?$/)]],
-      gender: ['', [Validators.required]],
+      domain_name: ['', [Validators.required]],
+      material: ['', [Validators.required]],
+      topic:['',[Validators.required]],
       id: [0, [Validators.required]],
-      userType: ['', [Validators.required]],
     });
 
   }
@@ -59,25 +57,6 @@ export class AddUserComponent implements OnInit {
     this.userform.reset();
   }
 
-  get name(){
-    return this.userform.get('name');
-  }
-  get mobile(){
-    return this.userform.get('mobile');
-  }
-  get email(){
-    return this.userform.get('email');
-  }
-  // get gender(){
-  //   return this.userform.get('gender');
-  // }
-  // get usertype(){
-  //   return this.userform.get('usertype');
-  // }
-  // get fullFormControl(){
-  //   return this.userform.controls;
-  // }
-  
 
 }
 
