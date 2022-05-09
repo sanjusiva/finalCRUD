@@ -6,7 +6,8 @@ import {HomeComponent} from './home/home.component';
 import {UserListComponent} from './user-list/user-list.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  // { path: '', component: UserListComponent },
+  {path:'',redirectTo:'user',pathMatch:'full'},
   { path: 'user', component: UserListComponent },
   { path: 'add-user', component: AddUserComponent },
   { path: 'update-user/:id', component: AddUserComponent }

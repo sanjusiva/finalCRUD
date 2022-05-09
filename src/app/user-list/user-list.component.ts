@@ -15,8 +15,10 @@ export class UserListComponent implements OnInit {
   }
   remove(id: number) {
     console.warn("remove id :"+id);
-    this.userService.removeUser(id);
-    this.userList = this.userService.getUsers();
+    if (confirm("Are you sure would you like to delete the details?") == true) {
+      this.userService.removeUser(id);
+      this.userList = this.userService.getUsers();
+    } 
 }
 
 }

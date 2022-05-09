@@ -13,7 +13,6 @@ export class UserService {
         mobile: '6383638047',
         userType: 'Admin'
     }];
-    newId:number=1;
     constructor() {}
     getUsers() {
         return this.userList
@@ -22,10 +21,11 @@ export class UserService {
         return this.userList.find(x => x.id == id)
     }
     addUser(user: User) {
-        // user.id = new Date().getTime();
-        user.id = this.newId+1
+        user.id = new Date().getTime();
         this.userList.push(user);
-        alert("Added successfully");
+        setTimeout(()=>{
+            alert("Added successfully");
+          },100)
     }
     updateUser(user: User) {
         console.warn("userID : "+user.id);

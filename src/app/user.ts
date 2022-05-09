@@ -4,5 +4,5 @@ export interface User {
     email: string,
     mobile: string,
     gender: string,
-    userType?: string
+    userType: string
 }

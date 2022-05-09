@@ -1,28 +1,22 @@
 <div class="container" style="margin-top: 20px;">
-    <p-table [value]="userList">
-        <ng-template pTemplate="header">
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Mobile</th>
-                <th>Gender</th>
-                <th>Action</th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-user>
-            <!-- <p *ngFor="let user of userList"> -->
-            <tr>
-                <td>{{user.name}}</td>
-                <td>{{user.email}}</td>
-                <td>{{user.mobile}}</td>
-                <td>{{user.gender}}</td>
-                <td>
-                    <button [routerLink]="['/update-user',user.id]">Edit</button>
-                    <button (click)="remove(user.id)">Remove</button>
-                </td>
-            </tr>      
-        <!-- </p>   -->
-        </ng-template>
-    </p-table>
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Gender</th>
+            <th>Action</th>
+        </tr>
+
+        <tr *ngFor="let user of userList">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.mobile}}</td>
+            <td>{{user.gender}}</td>
+            <td>
+                <button class="btn btn-warning" [routerLink]="['/update-user',user.id]">Edit</button>
+                <button class="btn btn-danger" style="color: black;" (click)="remove(user.id)">Remove</button>
+            </td>
+    </table>
     <a [routerLink]="['/add-user']" class="btn btn-primary">Add New</a>
 </div>

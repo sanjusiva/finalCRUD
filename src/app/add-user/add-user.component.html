@@ -1,29 +1,28 @@
 <div class="container">
     <form [formGroup]="userform">
         <div>
-            <label for="name">Name</label>
+            <label for="name"><b>Name</b></label>
             <div>
-                <input type="text" #name id="name" name="name" formControlName="name" placeholder="Name">  
-                <!-- <span style="color: red;" *ngIf="name && name.invalid && name.touched">This fiels is invalid</span> -->
+                <input type="text"  id="name" name="name" formControlName="name" placeholder="Name"><br>  
+                <span style="color: red;" *ngIf="name && name.invalid && name.touched">This fiels is invalid</span>
             </div>
         </div>
         <div>
-            <label for="mobile" class="form-label">Mobile</label>
+            <label for="mobile"><b>Mobile</b></label>
             <div>
-                <input type="tel" id="mobile" name="mobile" formControlName="mobile" placeholder="Mobile">
-                <!-- <span style="color: red;" *ngIf="mobile && mobile.invalid && mobile.touched">This fiels is invalid</span>  -->
-
+                <input type="text" id="mobile" name="mobile" formControlName="mobile" placeholder="Mobile"><br>
+                <span style="color: red;" *ngIf="mobile && mobile.invalid && mobile.touched">This field is invalid</span> 
             </div>
         </div>
         <div>
-            <label for="email">Email</label>
+            <label for="email"><b>Email</b></label>
             <div>
-                <input type="email" id="email" name="email" formControlName="email" placeholder="xyz@gmail.com">
-                <!-- <span style="color: red;" *ngIf="email && email.invalid && email.touched">This fiels is invalid</span><br> -->
+                <input type="email" id="email" name="email" formControlName="email" placeholder="xyz@gmail.com"><br>
+                <span style="color: red;" *ngIf="email && email.invalid && email.touched">This fiels is invalid</span>
             </div>
         </div>
         <div>
-            <label for="email" >Gender</label>
+            <label for="email" ><b>Email</b>></label>
             <div>
                 <select formControlName="gender">
                     <option value=""> --Select--</option>
@@ -33,7 +32,7 @@
             </div>
         </div>
         <div>
-            <label for="name">User Type</label>
+            <label for="name"><b>User Type</b></label>
             <div>
                 <div>
                     <input formControlName="userType" type="radio" id="User" value="User">
@@ -43,14 +42,14 @@
                     <input formControlName="userType" type="radio" id="Admin" value="Admin">
                     <label for="Admin">Admin</label>
                 </div>
-            </div>
+            </div><br>
         </div>
         <div class="mb-1">
             <div class="btn-group" role="group">
+                <button class="btn btn-info" [routerLink]="['/user']">Back</button>
                 <button (click)="save()" [disabled]="userform.invalid" class="btn btn-primary" type="button">
                     {{id==0 || id==null ?'Save':'Update'}}</button>
                 <button class="btn btn-secondary" (click)="resetValues()" type="button">Reset </button>
-                <button class="btn btn-info" [routerLink]="['/user']">Back</button>
             </div>
         </div>
 
