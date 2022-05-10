@@ -13,6 +13,8 @@ export class AddUserComponent implements OnInit {
   id: number = 0;
   userform: FormGroup;
 
+  domainList: any = ['Angular','React','Express','MongoDB','NodeJS','JQuery'];
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -24,6 +26,7 @@ export class AddUserComponent implements OnInit {
       material: ['', [Validators.required]],
       topic:['',[Validators.required]],
       id: [0, [Validators.required]],
+      description:['',[Validators.required]]
     });
 
   }

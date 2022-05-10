@@ -4,6 +4,7 @@
             <th>Domain Name</th>
             <th>Topic</th>
             <th>Material</th>
+            <!-- <th>Description</th> -->
             
         </tr>
 
@@ -11,13 +12,25 @@
             <td>{{user.domain_name}}</td>
             <td>{{user.topic}}</td>
             <td>{{user.material}}</td>
-            <td>
-                <button class="btn btn-warning" [routerLink]="['/update-user',user.id]">Edit</button>
-                <button class="btn btn-danger" style="color: black;" (click)="remove(user.id)">Remove</button>
-            </td>
+            <!-- <td>{{user.description}}</td> -->
+            <p *ngIf="userName=='Sanju'">
+                <td>
+                    <button class="btn btn-warning" [routerLink]="['/update-user',user.id]">Edit</button>
+                    <button class="btn btn-danger" style="color: black;" (click)="remove(user.id)">Remove</button>
+                </td>
+            </p>
+            <ng-template #elsecase>
+                <button class="btn btn-warning" [routerLink]="['/detail-view',user.id]">View Detail</button>
+            </ng-template>
+        </tr>
     </table>
-    <a [routerLink]="['/add-user']" class="btn btn-primary">Add New</a>
-    <a [routerLink]="['/admin-material']" class="btn btn-primary">User view</a>
-    <a [routerLink]="['/login']" class="btn btn-primary">Logout</a>
-
+    <p *ngIf="userName=='Sanju' else elsecase">
+        <a [routerLink]="['/add-user']" class="btn btn-primary">Add New Material</a>&nbsp;
+        <a [routerLink]="['/admin-material']" class="btn btn-warning">User view</a>&nbsp;
+        <a [routerLink]="['/login']" class="btn btn-danger">Logout</a>&nbsp;
+    </p>
+    <ng-template #elsecase>
+        <a [routerLink]="['/course']" class="btn btn-primary">Back to Course</a>&nbsp;
+        <a [routerLink]="['/login']" class="btn btn-primary">logout</a>
+    </ng-template>
 </div>

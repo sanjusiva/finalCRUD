@@ -18,6 +18,7 @@ import { UserMaterialComponent } from './user-material/user-material.component';
 import { CourseComponent } from './course/course.component';
 import { LoginComponent } from './login/login.component';
 import { AdminMaterialComponent } from './admin-material/admin-material.component';
+import { DetailViewComponent } from './detail-view/detail-view.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AdminMaterialComponent } from './admin-material/admin-material.componen
     UserMaterialComponent,
     CourseComponent,
     LoginComponent,
-    AdminMaterialComponent
+    AdminMaterialComponent,
+    DetailViewComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,7 @@ import { AdminMaterialComponent } from './admin-material/admin-material.componen
 
     
   ],
-  providers: [UserService,LoginComponent],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

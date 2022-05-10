@@ -1,10 +1,27 @@
 <div class="container">
     <form [formGroup]="userform">
         <div>
-            <label for="domain_name"><b>Name</b></label>
-            <div>
+            <label for="domain_name"><b>Domain Name</b></label><br>
+            <!-- <div>
                 <input type="text"  id="domain_name" name="domain_name" formControlName="domain_name" placeholder="domain_name"><br> 
-            </div>
+            </div> -->
+            <!-- <select name="domain_name" id="domain_name">
+              <option value="angular">Angular</option>
+              <option value="react">React</option>
+              <option value="mongodb">MongoDB</option>
+              <option value="express">Express</option>
+              <option value="nodejs">NodeJS</option>
+              <option value="jquery">JQuery</option>
+            </select>  -->
+            <!-- <label for="domain_name">Domain Name:</label>   -->
+            <select formControlName="domain_name" >  
+                <option disabled>Select domain_name</option>  
+                <option>Choose domain_name</option>  
+                <option *ngFor="let domain of domainList">{{domain}}</option>  
+            </select>  
+            <!-- <div *ngIf="f.website.touched && f.website.invalid" class="alert alert-danger">  
+                <div *ngIf="f.website.errors.required">Name is required.</div>  
+            </div>   -->
         </div>
        
         <div>
@@ -18,6 +35,14 @@
             <label for="topic"><b>Topic</b></label>
             <div>
                 <input type="text"  id="topic" name="topic" formControlName="topic" placeholder="topic"><br>  
+            </div>
+        </div>
+
+
+        <div>
+            <label for="description"><b>Description</b></label>
+            <div>
+                <textarea  id="description" name="description" formControlName="description" placeholder="description"></textarea><br>  
             </div>
         </div>
        

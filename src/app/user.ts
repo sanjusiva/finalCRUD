@@ -3,4 +3,5 @@ export interface User {
     domain_name: string,
     topic:string
     material: string,
+    description:string
 }

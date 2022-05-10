@@ -3,15 +3,26 @@
         <tr>
             <th>Domain Name</th>
             <th>Topic</th>
-            <th>Material</th>  
+            <th>Material</th>
+
         </tr>
 
         <tr *ngFor="let user of userList">
             <td>{{user.domain_name}}</td>
             <td>{{user.topic}}</td>
             <td>{{user.material}}</td>
+            <td>
+                <button class="btn btn-warning" [routerLink]="['/detail-view',user.id]">View Detail</button>
+            </td>
         </tr>
     </table>
-    <a [routerLink]="['/user-list']" class="btn btn-primary">Back</a>
+    <!-- <p>{{userName}}</p> -->
+    <p *ngIf="userName=='Sanju' else elsecase">
+        <a [routerLink]="['/user-list']" class="btn btn-primary">Back</a>
+    </p>
+    <ng-template #elsecase>
+        <a [routerLink]="['/course']" class="btn btn-primary">Back</a>
+    </ng-template>
+    <!-- <a [routerLink]="['/user-list']" class="btn btn-primary">Back</a> -->
 
 </div>

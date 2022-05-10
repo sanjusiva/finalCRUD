@@ -9,6 +9,9 @@
         <tr *ngFor="let user of userList">
             <td>{{user.domain_name}}</td>
             <td>{{user.material}}</td>
+            <td> 
+                <button class="btn btn-warning" [routerLink]="['/detail-view',user.id]">View Detail</button>
+            </td>
     </table>
 
     <a [routerLink]="['/course']" class="btn btn-primary">Back</a>

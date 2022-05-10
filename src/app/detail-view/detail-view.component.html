@@ -1,0 +1,16 @@
+<!-- <div>
+    <h1>Domain</h1>
+    <h1>{{userList.domain_name}}</h1>
+</div> -->
+
+<div class="container" style="margin-top: 20px;">
+    <table class="table">
+            <tr><b>Domain</b> : {{userList.domain_name}}</tr>
+            <tr><b>Topic</b> : {{userList.topic}}</tr>
+            <tr><b>Material</b> : {{userList.material}}</tr>
+            <tr><b>Description</b> : {{userList.description}}</tr>
+</table>
+</div>
+<div class="btn">
+    <a [routerLink]="['/admin-material']" class="btn btn-primary">Back</a>
+</div>

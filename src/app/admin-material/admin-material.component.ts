@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginComponent } from '../login/login.component';
 import { UserService } from '../service/user.service';
 import { User } from '../user';
 
@@ -10,12 +9,13 @@ import { User } from '../user';
 })
 export class AdminMaterialComponent implements OnInit {
   userList: User[] = [];
-  constructor(private userService: UserService,private login:LoginComponent) { }
+  userName:string='';
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.userList = this.userService.getUsers();
-    console.log("Username"+this.login.username);
-    
+    this.userName=this.userService.userName;
+    console.log("Username"+this.userService.userName);    
   }
 
 }

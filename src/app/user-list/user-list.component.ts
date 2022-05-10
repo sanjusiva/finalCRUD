@@ -8,10 +8,14 @@ import { User } from '../user';
 })
 export class UserListComponent implements OnInit {
   userList: User[] = [];
+  userName:string='';
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.userList = this.userService.getUsers();
+    this.userList = this.userService.getUsers();
+    this.userName=this.userService.userName;
+    console.log("Username"+this.userService.userName);    
   }
   remove(id: number) {
     console.warn("remove id :"+id);

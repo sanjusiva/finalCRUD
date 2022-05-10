@@ -5,11 +5,15 @@ import { User } from '../user';
   providedIn: 'root'
 })
 export class UserService {
+    userName:string='';
+    //omainName:string='';
     private userList: User[] = [{
         id: 1,
         domain_name:'Angular',
         topic:'Introduction',
-        material:"https://angular.io/docs"
+        material:"https://angular.io/docs",
+        description:`Angular is an application design framework and development 
+        platform for creating efficient and sophisticated single-page apps.`
     }];
     constructor() {}
     getUsers() {
@@ -36,4 +40,10 @@ export class UserService {
     removeUser(id: number) {
         this.userList = this.userList.filter(x => x.id != id);
     }
+    getUsername(username:string){
+        this.userName=username;
+    }
+    // getDomainName(domain_name:string){
+    //     this.domainName=domain_name;
+    // }
 }
