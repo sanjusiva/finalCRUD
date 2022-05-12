@@ -15,7 +15,7 @@ export class AdminMaterialComponent implements OnInit {
   ngOnInit(): void {
     this.userList = this.userService.getUsers();
     this.userName=this.userService.userName;
-    console.log("Username"+this.userService.userName);    
+    console.log("Username-adminMaterial"+this.userService.userName);    
   }
 
 }

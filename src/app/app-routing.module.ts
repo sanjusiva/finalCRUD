@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccessGuard } from './access.guard';
 
 import {AddUserComponent} from './add-user/add-user.component';
 import { AdminMaterialComponent } from './admin-material/admin-material.component';
@@ -18,7 +19,7 @@ const routes: Routes = [
   //{ path:'user-material',component:UserMaterialComponent},
   { path:'admin-material',component:AdminMaterialComponent},
   { path:'user-list',component:UserListComponent},
-  { path:'login',component:LoginComponent},
+  { path:'login',component:LoginComponent,canActivate :[AccessGuard]},
   { path:'course',component:CourseComponent},
   { path:'detail-view/:id',component:DetailViewComponent}
 

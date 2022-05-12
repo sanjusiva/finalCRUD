@@ -15,7 +15,7 @@ export class UserListComponent implements OnInit {
     this.userList = this.userService.getUsers();
     this.userList = this.userService.getUsers();
     this.userName=this.userService.userName;
-    console.log("Username"+this.userService.userName);    
+    console.log("Username-userList"+this.userService.userName);    
   }
   remove(id: number) {
     console.warn("remove id :"+id);
